@@ -1,12 +1,12 @@
 name: CI/CD
 on:
   push:
-    branches: [main]
+    branches: [master]
 
 jobs:
   build:
     runs-on: self-hosted
     steps:
-      - uses: actions/checkout@main
+      - uses: actions/checkout@master
       - name: Build Docker
         run: docker compose up --build -d
