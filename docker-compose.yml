@@ -2,22 +2,22 @@ services:
   wordpress:
     image: wordpress:latest
     container_name: wordpress
-    restart: always
+    restart: always       #luôn khởi động lại nếu bị dừng
     ports:
-      - "8080:80"
+      - "8080:80"         #ánh xạ cổng 80 của wordpress lên cổng 8080 của máy chủ host
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_USER: wpuser
       WORDPRESS_DB_PASSWORD: password
       WORDPRESS_DB_NAME: wordpress
     volumes:
-      - wordpress_data:/var/www/html
+      - wordpress_data:/var/www/html        #để lưu trữ dữ liệu của wordpress
 
   db:
     image: mysql:5.7
     container_name: wordpress_db
     restart: always
-    environment:
+    environment:          #cấu hình biến môi trường
       MYSQL_DATABASE: wordpress
       MYSQL_USER: wpuser
       MYSQL_PASSWORD: password

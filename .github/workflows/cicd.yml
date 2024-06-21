@@ -1,12 +1,12 @@
 name: CI/CD
 on:
-  push:
-    branches: [master]
+  push:  #kích hoạt khi push code 
+    branches: [master]    
 
 jobs:
   build:
     runs-on: self-hosted
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@master       #ktra code
       - name: Build Docker
-        run: docker compose up --build -d
+        run: docker compose up --build -d       #start các container
