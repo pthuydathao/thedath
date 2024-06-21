@@ -10,3 +10,4 @@ jobs:
       - uses: actions/checkout@master       #ktra code
       - name: Build Docker
         run: docker compose up --build -d       #start các container
+
